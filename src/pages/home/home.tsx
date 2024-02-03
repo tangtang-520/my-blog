@@ -1,6 +1,13 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+// import React from "react";
+import { Button } from "@nextui-org/react";
 
 function Home() {
+  const navigate = useNavigate()
+  const goArticle = () => {
+    navigate('/Article')
+  }
+
   return (
     <div className="w-full bgheight">
       <div className=" bgheight w-full relative bgImg bg-[url('/src/assets/beams-basic-transparent.png')] bg-cover bg-no-repeat bg-center">
@@ -18,7 +25,10 @@ function Home() {
           </p>
           <div className="h-4"></div>
           <div>
-            <Link className="btn btn-wide btn-primary" to={'/Article'}>随便看看</Link>
+            {/* <Link className="btn btn-wide btn-primary" to={"/Article"}>
+             
+            </Link> */}
+            <Button color="primary" onClick={goArticle}>随便看看</Button>
           </div>
         </div>
       </div>
